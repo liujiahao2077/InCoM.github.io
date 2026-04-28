@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>InCoM – Intent-Driven Perception and Structured Coordination for Whole-Body Mobile Manipulation</title>
+  <title>InCoM – Intent-Driven Perception and Structured Coordination for Mobile Manipulation</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', system-ui, -apple-system, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.6; }
@@ -14,6 +14,7 @@
     h2 { font-size: 1.5rem; margin-bottom: 8px; }
     h3 { font-size: 1.25rem; color: #555; margin-bottom: 16px; }
     .abstract { font-size: 1rem; color: #444; margin-bottom: 16px; text-align: justify; max-width: 800px; margin-left: auto; margin-right: auto; }
+    .abstract p { margin-bottom: 12px; }
     .video-hero { margin-bottom: 32px; }
     .video-hero video { width: 100%; border-radius: 8px; }
     table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
@@ -31,17 +32,18 @@
   <main>
     <header>
       <h1>InCoM</h1>
-      <p class="subtitle">Intent-Driven Perception and Structured Coordination for Whole-Body Mobile Manipulation</p>
+      <p class="subtitle">Intent-Driven Perception and Structured Coordination for Mobile Manipulation</p>
     </header>
 
     <hr>
 
     <section>
       <h2>Abstract</h2>
-      <p class="abstract">
-        <!-- TODO: Replace with your paper abstract -->
-        We present InCoM, a framework for whole-body mobile manipulation that leverages intent-driven perception and structured coordination to achieve robust performance across diverse tasks. Our approach enables a mobile manipulator to perform complex manipulation tasks in both simulation and real-world environments.
-      </p>
+      <div class="abstract">
+        <p>Mobile manipulation is a fundamental capability for general-purpose robotic agents, requiring both coordinated control of the mobile base and manipulator and robust perception under dynamically changing viewpoints. However, existing approaches face two key challenges: strong coupling between base and arm actions complicates control optimization, and perceptual attention is often poorly allocated as viewpoints shift during mobile manipulation.</p>
+        <p>We propose <strong>InCoM</strong>, an intent-driven perception and structured coordination framework for mobile manipulation. InCoM infers latent motion intent to dynamically reweight multi-scale perceptual features, enabling stage-adaptive allocation of perceptual attention. To support robust cross-modal perception, InCoM further incorporates a geometric-semantic structured alignment mechanism that enhances multimodal correspondence. On the control side, we design a decoupled coordinated flow matching action decoder that explicitly models coordinated base-arm action generation, alleviating optimization difficulties caused by control coupling.</p>
+        <p>Experimental results demonstrate that InCoM significantly outperforms state-of-the-art methods, achieving success rate gains of <strong>28.2%</strong>, <strong>26.1%</strong>, and <strong>23.6%</strong> across three ManiSkill-HAB scenarios without privileged information. Furthermore, its effectiveness is consistently validated in real-world mobile manipulation tasks, where InCoM maintains a superior success rate over existing baselines.</p>
+      </div>
     </section>
 
     <hr>
@@ -50,9 +52,7 @@
       <h2>ManiSkill-HAB Simulation Experiments</h2>
       <h3>InCoM Task Execution Showcase</h3>
       <div class="video-hero">
-        <video controls muted loop playsinline>
-          <source src="assets/sim/InCoM/continued_video.mp4" type="video/mp4">
-        </video>
+        <video controls muted loop playsinline src="assets/sim/InCoM/continued_video.mp4"></video>
       </div>
 
       <h3>Baseline Comparison</h3>
@@ -69,27 +69,27 @@
           <tbody>
             <tr>
               <td>Pick Box from Counter</td>
-              <td><video controls muted loop playsinline><source src="assets/sim/ACT/pick_box_from_counter.mp4" type="video/mp4"></video></td>
-              <td><video controls muted loop playsinline><source src="assets/sim/DSPv2/pick_box_from_counter.mp4" type="video/mp4"></video></td>
-              <td><video controls muted loop playsinline><source src="assets/sim/InCoM/pick_box_from_counter.mp4" type="video/mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/sim/ACT/pick_box_from_counter.mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/sim/DSPv2/pick_box_from_counter.mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/sim/InCoM/pick_box_from_counter.mp4"></video></td>
             </tr>
             <tr>
               <td>Place Can on Counter</td>
-              <td><video controls muted loop playsinline><source src="assets/sim/ACT/place_can_on_counter.mp4" type="video/mp4"></video></td>
-              <td><video controls muted loop playsinline><source src="assets/sim/DSPv2/place_can_on_counter.mp4" type="video/mp4"></video></td>
-              <td><video controls muted loop playsinline><source src="assets/sim/InCoM/place_can_on_counter.mp4" type="video/mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/sim/ACT/place_can_on_counter.mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/sim/DSPv2/place_can_on_counter.mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/sim/InCoM/place_can_on_counter.mp4"></video></td>
             </tr>
             <tr>
               <td>Pick Box from Sofa</td>
-              <td><video controls muted loop playsinline><source src="assets/sim/ACT/pick_box_from_sofa.mp4" type="video/mp4"></video></td>
-              <td><video controls muted loop playsinline><source src="assets/sim/DSPv2/pick_box_from_sofa.mp4" type="video/mp4"></video></td>
-              <td><video controls muted loop playsinline><source src="assets/sim/InCoM/pick_box_from_sofa.mp4" type="video/mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/sim/ACT/pick_box_from_sofa.mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/sim/DSPv2/pick_box_from_sofa.mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/sim/InCoM/pick_box_from_sofa.mp4"></video></td>
             </tr>
             <tr>
               <td>Place Can on Sofa</td>
-              <td><video controls muted loop playsinline><source src="assets/sim/ACT/place_can_on_sofa.mp4" type="video/mp4"></video></td>
-              <td><video controls muted loop playsinline><source src="assets/sim/DSPv2/place_can_on_sofa.mp4" type="video/mp4"></video></td>
-              <td><video controls muted loop playsinline><source src="assets/sim/InCoM/place_can_on_sofa.mp4" type="video/mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/sim/ACT/place_can_on_sofa.mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/sim/DSPv2/place_can_on_sofa.mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/sim/InCoM/place_can_on_sofa.mp4"></video></td>
             </tr>
           </tbody>
         </table>
@@ -113,27 +113,27 @@
           <tbody>
             <tr>
               <td>Throw Rubbish</td>
-              <td><video controls muted loop playsinline><source src="assets/real/ACT/throw_rubbish.mp4" type="video/mp4"></video></td>
-              <td><video controls muted loop playsinline><source src="assets/real/Pi0.5/throw_rubbish.mp4" type="video/mp4"></video></td>
-              <td><video controls muted loop playsinline><source src="assets/real/InCoM/throw_rubbish.mp4" type="video/mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/real/ACT/throw_rubbish.mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/real/Pi0.5/throw_rubbish.mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/real/InCoM/throw_rubbish.mp4"></video></td>
             </tr>
             <tr>
               <td>Close Drawer</td>
-              <td><video controls muted loop playsinline><source src="assets/real/ACT/close_drawer.mp4" type="video/mp4"></video></td>
-              <td><video controls muted loop playsinline><source src="assets/real/Pi0.5/close_drawer.mp4" type="video/mp4"></video></td>
-              <td><video controls muted loop playsinline><source src="assets/real/InCoM/close_drawer.mp4" type="video/mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/real/ACT/close_drawer.mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/real/Pi0.5/close_drawer.mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/real/InCoM/close_drawer.mp4"></video></td>
             </tr>
             <tr>
               <td>Pick Banana</td>
-              <td><video controls muted loop playsinline><source src="assets/real/ACT/pick_banana.mp4" type="video/mp4"></video></td>
-              <td><video controls muted loop playsinline><source src="assets/real/Pi0.5/pick_banana.mp4" type="video/mp4"></video></td>
-              <td><video controls muted loop playsinline><source src="assets/real/InCoM/pick_banana.mp4" type="video/mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/real/ACT/pick_banana.mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/real/Pi0.5/pick_banana.mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/real/InCoM/pick_banana.mp4"></video></td>
             </tr>
             <tr>
               <td>Move Block</td>
-              <td><video controls muted loop playsinline><source src="assets/real/ACT/move_block.mp4" type="video/mp4"></video></td>
-              <td><video controls muted loop playsinline><source src="assets/real/Pi0.5/move_block.mp4" type="video/mp4"></video></td>
-              <td><video controls muted loop playsinline><source src="assets/real/InCoM/move_block.mp4" type="video/mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/real/ACT/move_block.mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/real/Pi0.5/move_block.mp4"></video></td>
+              <td><video controls muted loop playsinline src="assets/real/InCoM/move_block.mp4"></video></td>
             </tr>
           </tbody>
         </table>
