@@ -3,94 +3,150 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>InCoM – Intent-Driven Perception and Structured Coordination for Mobile Manipulation</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', system-ui, -apple-system, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.6; }
-    main { max-width: 1080px; margin: 0 auto; padding: 48px 24px; }
-    h1 { font-size: 2rem; text-align: center; margin-bottom: 8px; }
-    .subtitle { text-align: center; font-size: 1.125rem; color: #555; margin-bottom: 16px; }
-    .links { display: flex; justify-content: center; gap: 16px; margin-bottom: 16px; }
-    .links a { display: inline-flex; align-items: center; gap: 6px; padding: 8px 20px; border: 1px solid #d1d5db; border-radius: 8px; text-decoration: none; color: #374151; font-size: 0.95rem; transition: background 0.15s, border-color 0.15s; }
-    .links a:hover { background: #f3f4f6; border-color: #9ca3af; }
-    .links a svg { width: 20px; height: 20px; }
-    .authors { text-align: center; font-size: 1rem; color: #444; margin-bottom: 4px; }
-    .authors sup { font-size: 0.7em; color: #6b7280; }
-    .affiliations { text-align: center; font-size: 0.8rem; color: #6b7280; line-height: 1.5; }
-    hr { border: none; border-top: 1px solid #e5e7eb; margin: 32px 0; }
-    h2 { font-size: 1.5rem; margin-bottom: 8px; }
-    h3 { font-size: 1.25rem; color: #555; margin-bottom: 16px; }
-    .abstract { font-size: 1rem; color: #444; margin-bottom: 16px; text-align: justify; max-width: 800px; margin-left: auto; margin-right: auto; }
-    .abstract p { margin-bottom: 12px; }
-    .video-hero { margin-bottom: 32px; }
-    .video-hero video { width: 100%; border-radius: 8px; }
-    table { width: 100%; border-collapse: collapse; font-size: 0.875rem; table-layout: fixed; }
-    th, td { padding: 12px 16px; border-bottom: 1px solid #f3f4f6; }
-    th { text-align: center; font-weight: 600; color: #374151; background: #fafafa; }
-    th:first-child, td:first-child { text-align: left; width: 140px; font-weight: 500; color: #1f2937; }
-    td { text-align: center; vertical-align: top; }
-    td video { width: 100%; border-radius: 4px; }
-    .table-wrapper { overflow-x: auto; }
-    section { margin-bottom: 48px; }
-    .venue { text-align: center; font-size: 1rem; font-weight: 600; margin-bottom: 16px; }
-    .results-table { min-width: 940px; table-layout: auto; white-space: nowrap; }
-    .results-table.compact { min-width: 760px; }
-    .results-table th, .results-table td { padding: 9px 10px; }
-    .results-table th:first-child, .results-table td:first-child { width: auto; }
-    .best { font-weight: 700; }
-    .note { margin: 12px 0 20px; color: #5b6472; font-size: .9rem; }
-    .citation-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
-    .citation-heading h2 { margin-bottom: 0; }
-    .copy-citation { border: 1px solid #d1d5db; border-radius: 8px; background: #fff; color: #374151; padding: 8px 14px; font: inherit; font-size: .9rem; cursor: pointer; }
-    .copy-citation:hover { background: #f3f4f6; }
-    .copy-citation:focus-visible { outline: 2px solid #374151; outline-offset: 3px; }
-    .citation-code { padding: 18px; background: #fafafa; border: 1px solid #e5e7eb; border-radius: 8px; overflow-x: auto; font-size: .875rem; line-height: 1.6; }
-    .citation-code code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
-    .copy-status { min-height: 1.6em; margin-top: 8px; color: #5b6472; font-size: .875rem; }
-  </style>
+  <meta name="theme-color" content="#f7f9fc">
+  <meta name="description" content="InCoM: Intent-Driven Perception and Structured Coordination for Mobile Manipulation. CoRL 2026. Project overview, robot demonstrations, complete results, and code.">
+  <meta property="og:title" content="InCoM — Intent-driven perception. Coordinated motion.">
+  <meta property="og:description" content="An end-to-end mobile manipulation framework, presented at CoRL 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://liujiahao2077.github.io/InCoM.github.io/">
+  <meta property="og:image" content="https://liujiahao2077.github.io/InCoM.github.io/assets/framework.png">
+  <link rel="canonical" href="https://liujiahao2077.github.io/InCoM.github.io/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <title>InCoM | CoRL 2026</title>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>InCoM</h1>
-      <p class="subtitle">Intent-Driven Perception and Structured Coordination for Mobile Manipulation</p>
-      <p class="venue">CoRL 2026</p>
-      <div class="links">
-        <a href="https://arxiv.org/abs/2602.23024">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-          Paper
-        </a>
-        <a href="https://github.com/liujiahao2077/InCoM">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          Code
-        </a>
+  <svg class="svg-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+    <symbol id="icon-paper" viewBox="0 0 24 24"><path d="M14 3H6v18h12V7l-4-4Z"/><path d="M14 3v5h4M9 12h6m-6 4h6"/></symbol>
+    <symbol id="icon-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7V5Z"/></symbol>
+    <symbol id="icon-pause" viewBox="0 0 24 24"><path d="M8 5v14m8-14v14"/></symbol>
+    <symbol id="icon-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V3H3v13h5"/></symbol>
+    <symbol id="icon-expand" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="icon-mark" viewBox="0 0 32 32"><path d="M5 25V8h9v17h13V8h-5v17"/><circle cx="5" cy="8" r="2"/><circle cx="27" cy="8" r="2"/></symbol>
+  </svg>
+  <a class="skip-link" href="#overview">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="#top" aria-label="InCoM home"><svg class="brand-mark" aria-hidden="true"><use href="#icon-mark"></use></svg>InCoM<span class="brand-divider"></span><span class="brand-venue">CoRL 2026</span></a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-menu"></use></svg></button>
+      <nav id="site-nav" aria-label="Main navigation">
+        <a href="#overview">Overview</a><a href="#demos">Demos</a><a href="#method">Method</a><a href="#results">Results</a><a href="#citation">Citation</a>
+      </nav>
+      <a class="nav-paper" href="https://arxiv.org/abs/2602.23024" target="_blank" rel="noopener noreferrer">Read paper <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-external"></use></svg></a>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero container" aria-labelledby="paper-title">
+      <div class="hero-identity">
+        <div class="hero-wordmark" aria-hidden="true">InCoM</div>
+        <span class="hero-venue">[CoRL2026]</span>
       </div>
-      <div class="authors">Jiahao Liu<sup>1,2,†</sup>, Wenbo Cui<sup>1,†</sup>, Zhongpu Xia<sup>3</sup>, Yongliang Wang<sup>1</sup>, Haoran Li<sup>1,2,*</sup>, Dongbin Zhao<sup>1,2</sup></div>
+      <h1 id="paper-title">Intent-Driven Perception and<br class="desktop-break"> Structured Coordination for Mobile Manipulation</h1>
+      <div class="authors">
+        <span>Jiahao Liu<sup>1,2,†</sup></span><span>Wenbo Cui<sup>1,†</sup></span><span>Zhongpu Xia<sup>3</sup></span><span>Yongliang Wang<sup>1</sup></span><span>Haoran Li<sup>1,2,*</sup></span><span>Dongbin Zhao<sup>1,2</sup></span>
+      </div>
       <div class="affiliations">
-        <sup>1</sup> SKL-MAIS, Institute of Automation, Chinese Academy of Sciences<br>
-        <sup>2</sup> School of Advanced Interdisciplinary Sciences, University of Chinese Academy of Sciences<br>
-        <sup>3</sup> Anyverse Dynamics<br>
-        †Equal contribution. &nbsp; *Corresponding author
+        <span><sup>1</sup> SKL-MAIS, Institute of Automation, Chinese Academy of Sciences</span>
+        <span><sup>2</sup> School of Advanced Interdisciplinary Sciences, University of Chinese Academy of Sciences</span>
+        <span><sup>3</sup> Anyverse Dynamics</span>
       </div>
-    </header>
-
-    <hr>
-
-    <section>
-      <h2>Abstract</h2>
-      <div class="abstract">
-        <p>Mobile manipulation is a fundamental capability for general-purpose robotic agents, requiring both coordinated control of the mobile base and manipulator and robust perception under dynamically changing viewpoints. However, existing approaches face two key challenges: strong coupling between base and arm actions complicates control optimization, and perceptual attention is often poorly allocated as viewpoints shift during mobile manipulation. We propose <strong>InCoM</strong>, an intent-driven perception and structured coordination framework for mobile manipulation. InCoM infers latent motion intent to dynamically reweight multi-scale perceptual features, enabling stage-adaptive allocation of perceptual attention. To support robust cross-modal perception, InCoM further incorporates a geometric–semantic affinity refinement mechanism that enhances multimodal correspondence. On the control side, we design a decoupled coordinated flow matching action decoder that explicitly models bidirectional base–arm interactions, alleviating optimization difficulties caused by control coupling. Under matched non-privileged observations and task-specific training data, InCoM improves mean success over DSPv2 by <strong>33.0</strong>, <strong>26.1</strong>, and <strong>23.6 percentage points</strong> on SetTable, TidyHouse, and PrepareGroceries, respectively. Furthermore, its effectiveness is validated on four real-world mobile manipulation tasks, where InCoM achieves higher success rates than ACT and π₀.₅.</p>
+      <p class="author-note">† Equal contribution <span>·</span> * Corresponding author</p>
+      <div class="hero-links">
+        <a class="button button-primary" href="https://arxiv.org/abs/2602.23024" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-paper"></use></svg> Read the paper <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-external"></use></svg></a>
+        <a class="button button-secondary" href="https://github.com/liujiahao2077/InCoM" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-code"></use></svg> View code</a>
+        <a class="button button-text" href="#demos"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-play"></use></svg> Watch demos</a>
       </div>
     </section>
 
-    <hr>
+    <section class="hero-showcase container" aria-label="InCoM real-world demonstrations">
+      <div class="showcase-toolbar"><span><span class="live-dot"></span> PERCEPTION MEETS COORDINATED MOTION</span><button id="hero-playback" class="text-control" aria-label="Pause preview videos"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-pause"></use></svg> <span>Pause previews</span></button></div>
+      <div class="hero-clips">
+        <figure class="hero-clip">
+          <video class="preview-video" muted loop playsinline preload="metadata" src="https://liujiahao2077.github.io/InCoM.github.io/assets/real/InCoM/throw_rubbish.mp4#t=0.1" aria-label="InCoM throwing rubbish"></video>
+          <figcaption><span class="clip-number">01</span><span>Throw rubbish</span><span class="clip-tag">Real robot</span></figcaption>
+        </figure>
+        <figure class="hero-clip">
+          <video class="preview-video" muted loop playsinline preload="metadata" src="https://liujiahao2077.github.io/InCoM.github.io/assets/real/InCoM/close_drawer.mp4#t=0.1" aria-label="InCoM closing a drawer"></video>
+          <figcaption><span class="clip-number">02</span><span>Close drawer</span><span class="clip-tag">Real robot</span></figcaption>
+        </figure>
+        <figure class="hero-clip">
+          <video class="preview-video" muted loop playsinline preload="metadata" src="https://liujiahao2077.github.io/InCoM.github.io/assets/real/InCoM/pick_banana.mp4#t=0.1" aria-label="InCoM picking a banana"></video>
+          <figcaption><span class="clip-number">03</span><span>Pick banana</span><span class="clip-tag">Real robot</span></figcaption>
+        </figure>
+      </div>
+      <div class="hero-caption"><a href="#demos" class="inline-link">Explore all demonstrations <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-arrow"></use></svg></a></div>
+    </section>
 
-    <section>
-      <h2>Quantitative Results</h2>
-      <h3>SetTable</h3>
-      <p class="note">Reproduced success rates (%) are reported as mean ± standard deviation over three runs. For π₀, the checkpoint is fixed and SD measures evaluation-run variability. Bold marks the highest mean in each column. AC-DiT results are taken from its paper and use privileged observations.</p>
-      <div class="table-wrapper">
-        <table class="results-table">
+    <section class="section container overview" id="overview">
+      <div class="section-heading"><p class="eyebrow">01 / THE IDEA</p><h2>See what matters.<br>Act as one.</h2><p class="section-lead">Stage-adaptive perception meets bidirectional base–arm coordination.</p></div>
+      <div class="abstract"><p>Mobile manipulation is a fundamental capability for general-purpose robotic agents, requiring both coordinated control of the mobile base and manipulator and robust perception under dynamically changing viewpoints. However, existing approaches face two key challenges: strong coupling between base and arm actions complicates control optimization, and perceptual attention is often poorly allocated as viewpoints shift during mobile manipulation. We propose <strong>InCoM</strong>, an intent-driven perception and structured coordination framework for mobile manipulation. InCoM infers latent motion intent to dynamically reweight multi-scale perceptual features, enabling stage-adaptive allocation of perceptual attention. To support robust cross-modal perception, InCoM further incorporates a geometric–semantic affinity refinement mechanism that enhances multimodal correspondence. On the control side, we design a decoupled coordinated flow matching action decoder that explicitly models bidirectional base–arm interactions, alleviating optimization difficulties caused by control coupling. Under matched non-privileged observations and task-specific training data, InCoM improves mean success over DSPv2 by <strong>33.0</strong>, <strong>26.1</strong>, and <strong>23.6 percentage points</strong> on SetTable, TidyHouse, and PrepareGroceries, respectively. Furthermore, its effectiveness is consistently validated in real-world mobile manipulation tasks, where InCoM maintains a superior success rate over existing baselines.</p></div>
+    </section>
+
+    <section class="results-strip container" aria-label="Simulation performance highlights">
+      <div class="strip-intro"><span class="eyebrow">MANISKILL-HAB</span><p>Mean success rate<br><span>vs. matched DSPv2 baseline</span></p></div>
+      <div class="stat"><div class="stat-number">83.8<span>%</span></div><p>SetTable <span class="delta">+33.0 pp</span></p></div>
+      <div class="stat"><div class="stat-number">47.8<span>%</span></div><p>TidyHouse <span class="delta">+26.1 pp</span></p></div>
+      <div class="stat"><div class="stat-number">40.5<span>%</span></div><p>PrepareGroceries <span class="delta">+23.6 pp</span></p></div>
+    </section>
+
+    <section class="demo-section" id="demos">
+      <div class="container">
+        <div class="section-heading heading-row"><div><p class="eyebrow">02 / DEMONSTRATIONS</p><h2>Mobile manipulation.<br>In simulation and reality.</h2></div><p class="section-lead">Explore the same task across policies.<br>Base motion and manipulation, side by side.</p></div>
+        <div class="demo-switch" role="tablist" aria-label="Demonstration environment"><button class="active" id="env-real" role="tab" aria-selected="true" aria-controls="demo-workspace" data-env="real">Real world <span>04 tasks</span></button><button id="env-sim" role="tab" aria-selected="false" tabindex="-1" aria-controls="demo-workspace" data-env="sim">Simulation <span>04 tasks</span></button></div>
+        <div id="demo-workspace" role="tabpanel" aria-labelledby="env-real">
+          <div class="task-bar" role="group" aria-label="Choose demonstration task">
+            <button type="button" class="task-button active" data-task="throw_rubbish" aria-pressed="true">Throw rubbish</button>
+            <button type="button" class="task-button" data-task="close_drawer" aria-pressed="false">Close drawer</button>
+            <button type="button" class="task-button" data-task="pick_banana" aria-pressed="false">Pick banana</button>
+            <button type="button" class="task-button" data-task="move_block" aria-pressed="false">Move block</button>
+          </div>
+          <div class="demo-player-heading"><p id="demo-description">Coordinated base motion and manipulation on a dual-arm mobile robot.</p><button class="text-control play-together" id="play-together"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-play"></use></svg> <span>Play all from start</span></button></div>
+          <div class="comparison-grid" aria-label="Video comparison">
+            <figure class="comparison-card"><figcaption><span class="method-label">ACT</span><span class="method-type">Baseline</span></figcaption><video controls muted loop playsinline preload="metadata" src="https://liujiahao2077.github.io/InCoM.github.io/assets/real/ACT/throw_rubbish.mp4#t=0.1" aria-label="ACT: Throw rubbish"></video></figure>
+            <figure class="comparison-card"><figcaption><span class="method-label" id="second-baseline">π₀.₅</span><span class="method-type">Baseline</span></figcaption><video controls muted loop playsinline preload="metadata" src="https://liujiahao2077.github.io/InCoM.github.io/assets/real/Pi0.5/throw_rubbish.mp4#t=0.1" aria-label="Pi 0.5: Throw rubbish"></video></figure>
+            <figure class="comparison-card comparison-ours"><figcaption><span class="method-label">InCoM</span><span class="method-type">Ours</span></figcaption><video controls muted loop playsinline preload="metadata" src="https://liujiahao2077.github.io/InCoM.github.io/assets/real/InCoM/throw_rubbish.mp4#t=0.1" aria-label="InCoM: Throw rubbish"></video></figure>
+          </div>
+          <p class="demo-footnote"><a href="#results">View quantitative results <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-arrow"></use></svg></a></p>
+          <p class="sr-only" id="demo-status" role="status" aria-live="polite"></p>
+        </div>
+        <details class="showcase-details"><summary><span>Full simulation showcase</span><span>Watch continuous task execution <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-play"></use></svg></span></summary><video id="full-showcase" controls muted loop playsinline preload="none" data-src="https://liujiahao2077.github.io/InCoM.github.io/assets/sim/InCoM/continued_video.mp4" aria-label="InCoM continuous simulation showcase"></video></details>
+      </div>
+    </section>
+
+    <section class="section container method-section" id="method">
+      <div class="section-heading heading-row"><div><p class="eyebrow">03 / THE FRAMEWORK</p><h2>Intent guides perception.<br>Structure enables coordination.</h2></div><p class="section-lead">Three complementary components connect visual understanding with coordinated action generation.</p></div>
+      <figure class="framework">
+        <div class="figure-toolbar"><span>InCoM / Architecture overview</span><button type="button" class="text-control" id="expand-framework"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-expand"></use></svg> Expand figure</button></div>
+        <img src="https://liujiahao2077.github.io/InCoM.github.io/assets/framework.png" width="2048" height="1062" alt="InCoM architecture: multi-scale intent-driven perception, dual-stream affinity refinement, and decoupled coordinated flow matching." loading="lazy">
+        <figcaption>Action history and visual context modulate multi-scale perception, while a coordinated flow-matching decoder couples base and arm action generation.</figcaption>
+      </figure>
+      <div class="module-grid">
+        <article><span class="module-number">01</span><span class="module-acronym">IDPPM</span><h3>Perception that adapts.</h3><p>Action history and current visual context dynamically reweight shallow, middle, and deep features for different task stages.</p></article>
+        <article><span class="module-number">02</span><span class="module-acronym">DARM</span><h3>Geometry meets semantics.</h3><p>Separate geometric and semantic affinity streams align 3D voxel features with multi-view image-patch features.</p></article>
+        <article><span class="module-number">03</span><span class="module-acronym">DCFM</span><h3>Two streams. One motion.</h3><p>Two flow-matching decoder branches exchange motion information bidirectionally to coordinate base and arm actions.</p></article>
+      </div>
+    </section>
+
+    <section class="results-section" id="results">
+      <div class="container">
+        <div class="section-heading heading-row"><div><p class="eyebrow">04 / THE EVIDENCE</p><h2>Results, in full.</h2></div><p class="section-lead">Complete success rates and uncertainty.<br>Only the best result in each column is bold.</p></div>
+        <div class="result-tabs" role="tablist" aria-label="Result tables">
+          <button id="result-tab-0" role="tab" aria-selected="true" aria-controls="result-panel-0" data-result="0">SetTable</button>
+          <button id="result-tab-1" role="tab" aria-selected="false" aria-controls="result-panel-1" data-result="1" tabindex="-1">TidyHouse &amp; PrepareGroceries</button>
+          <button id="result-tab-2" role="tab" aria-selected="false" aria-controls="result-panel-2" data-result="2" tabindex="-1">Real world</button>
+        </div>
+        <div class="result-panel" id="result-panel-0" role="tabpanel" aria-labelledby="result-tab-0">
+          <div class="table-meta"><h3>SetTable</h3><span>Success rate (%) · mean ± SD</span></div>
+          <div class="table-scroll" tabindex="0" aria-label="SetTable success rates; scroll horizontally on small screens"><table class="results-table">
           <thead><tr><th>Method</th><th>Pick Apple</th><th>Place Apple</th><th>Open Fridge</th><th>Pick Bowl</th><th>Place Bowl</th><th>Open Drawer</th><th>Close Drawer</th><th>Mean</th></tr></thead>
           <tbody>
             <tr><td>DP</td><td>0.5 ± 0.5</td><td>54.5 ± 5.1</td><td>63.0 ± 4.0</td><td>2.1 ± 0.9</td><td>63.5 ± 4.3</td><td>5.3 ± 1.8</td><td>89.4 ± 1.9</td><td>39.8</td></tr>
@@ -98,15 +154,15 @@
             <tr><td>WB-VIMA</td><td>1.6 ± 1.4</td><td>57.7 ± 4.7</td><td>27.0 ± 3.7</td><td>1.6 ± 1.8</td><td>60.3 ± 4.2</td><td>5.3 ± 1.4</td><td>87.3 ± 2.8</td><td>34.4</td></tr>
             <tr><td>DSPv2</td><td>1.4 ± 0.3</td><td>65.2 ± 3.6</td><td>73.4 ± 3.2</td><td>1.4 ± 0.8</td><td class="best">85.7 ± 2.4</td><td>29.9 ± 3.2</td><td>98.4 ± 1.4</td><td>50.8</td></tr>
             <tr><td>π₀</td><td>26.6 ± 3.8</td><td>48.9 ± 5.2</td><td>90.5 ± 1.9</td><td>26.6 ± 4.5</td><td>56.8 ± 5.9</td><td>75.5 ± 2.5</td><td>88.7 ± 2.0</td><td>59.1</td></tr>
-            <tr><td>AC-DiT (reported; privileged)</td><td>33.3 ± 1.9</td><td>33.3 ± 9.4</td><td class="best">90.7 ± 5.0</td><td>36.0 ± 6.5</td><td>17.3 ± 6.8</td><td>81.3 ± 6.8</td><td>97.3 ± 1.9</td><td>55.6</td></tr>
-            <tr><td>InCoM (Ours)</td><td class="best">59.4 ± 4.3</td><td class="best">84.1 ± 5.4</td><td>87.3 ± 2.8</td><td class="best">84.1 ± 4.6</td><td>82.5 ± 5.6</td><td class="best">88.9 ± 2.3</td><td class="best">100.0 ± 0.0</td><td class="best">83.8</td></tr>
+            <tr><td>AC-DiT<sup>†</sup></td><td>33.3 ± 1.9</td><td>33.3 ± 9.4</td><td class="best">90.7 ± 5.0</td><td>36.0 ± 6.5</td><td>17.3 ± 6.8</td><td>81.3 ± 6.8</td><td>97.3 ± 1.9</td><td>55.6</td></tr>
+            <tr class="ours"><td>InCoM <span class="ours-tag">Ours</span></td><td class="best">59.4 ± 4.3</td><td class="best">84.1 ± 5.4</td><td>87.3 ± 2.8</td><td class="best">84.1 ± 4.6</td><td>82.5 ± 5.6</td><td class="best">88.9 ± 2.3</td><td class="best">100.0 ± 0.0</td><td class="best">83.8</td></tr>
           </tbody>
-        </table>
-      </div>
-
-      <h3 style="margin-top: 28px;">TidyHouse and PrepareGroceries</h3>
-      <div class="table-wrapper">
-        <table class="results-table compact">
+        </table></div>
+          <p class="table-note">Reproduced success rates are mean ± standard deviation over three runs. † AC-DiT results are taken from its paper and use privileged observations.</p>
+        </div>
+        <div class="result-panel" id="result-panel-1" role="tabpanel" aria-labelledby="result-tab-1" hidden>
+          <div class="table-meta"><h3>TidyHouse &amp; PrepareGroceries</h3><span>Success rate (%) · mean ± SD</span></div>
+          <div class="table-scroll" tabindex="0" aria-label="TidyHouse and PrepareGroceries success rates; scroll horizontally on small screens"><table class="results-table compact">
           <thead><tr><th rowspan="2">Method</th><th colspan="3">TidyHouse</th><th colspan="3">PrepareGroceries</th></tr><tr><th>Pick All</th><th>Place All</th><th>Mean</th><th>Pick All</th><th>Place All</th><th>Mean</th></tr></thead>
           <tbody>
             <tr><td>DP</td><td>0.0 ± 0.0</td><td>30.3 ± 3.0</td><td>15.2</td><td>0.4 ± 0.3</td><td>17.7 ± 1.9</td><td>9.1</td></tr>
@@ -114,135 +170,30 @@
             <tr><td>WB-VIMA</td><td>0.8 ± 0.6</td><td>29.4 ± 3.5</td><td>15.1</td><td>0.8 ± 0.8</td><td>22.0 ± 2.6</td><td>11.4</td></tr>
             <tr><td>DSPv2</td><td>1.3 ± 0.3</td><td>42.1 ± 3.1</td><td>21.7</td><td>0.9 ± 0.6</td><td>32.8 ± 2.9</td><td>16.9</td></tr>
             <tr><td>π₀</td><td>8.6 ± 2.5</td><td>31.1 ± 3.0</td><td>19.9</td><td>5.1 ± 4.6</td><td>27.2 ± 3.7</td><td>16.1</td></tr>
-            <tr><td>InCoM (Ours)</td><td class="best">16.7 ± 1.9</td><td class="best">78.9 ± 2.9</td><td class="best">47.8</td><td class="best">15.0 ± 2.4</td><td class="best">65.9 ± 3.1</td><td class="best">40.5</td></tr>
+            <tr class="ours"><td>InCoM <span class="ours-tag">Ours</span></td><td class="best">16.7 ± 1.9</td><td class="best">78.9 ± 2.9</td><td class="best">47.8</td><td class="best">15.0 ± 2.4</td><td class="best">65.9 ± 3.1</td><td class="best">40.5</td></tr>
           </tbody>
-        </table>
-      </div>
-
-      <h3 style="margin-top: 28px;">Real-world success</h3>
-      <p class="note">Success rate (%) with Wilson 95% confidence intervals; 20 trials per task.</p>
-      <div class="table-wrapper">
-        <table class="results-table compact">
+        </table></div>
+          <p class="table-note">Mean ± standard deviation over three runs. Scenario means average the corresponding subtask means.</p>
+        </div>
+        <div class="result-panel" id="result-panel-2" role="tabpanel" aria-labelledby="result-tab-2" hidden>
+          <div class="table-meta"><h3>Real-world mobile manipulation</h3><span>20 trials per task</span></div>
+          <div class="table-scroll" tabindex="0" aria-label="Real-world success rates; scroll horizontally on small screens"><table class="results-table compact">
           <thead><tr><th>Method</th><th>Throw Rubbish</th><th>Close Drawer</th><th>Pick Banana</th><th>Move Block</th><th>Mean</th></tr></thead>
           <tbody>
             <tr><td>ACT</td><td>5 [1–24]</td><td>5 [1–24]</td><td>10 [3–30]</td><td>20 [8–42]</td><td>10.00 [5–19]</td></tr>
             <tr><td>π₀.₅</td><td>15 [5–36]</td><td>50 [30–70]</td><td>35 [18–57]</td><td>30 [15–52]</td><td>32.50 [23–43]</td></tr>
-            <tr><td>InCoM (Ours)</td><td class="best">50 [30–70]</td><td class="best">65 [43–82]</td><td class="best">45 [26–66]</td><td class="best">45 [26–66]</td><td class="best">51.25 [40–62]</td></tr>
+            <tr class="ours"><td>InCoM <span class="ours-tag">Ours</span></td><td class="best">50 [30–70]</td><td class="best">65 [43–82]</td><td class="best">45 [26–66]</td><td class="best">45 [26–66]</td><td class="best">51.25 [40–62]</td></tr>
           </tbody>
-        </table>
+        </table></div>
+          <p class="table-note">Success rate (%) with Wilson 95% confidence intervals in brackets. Four tasks, with 20 trials per task.</p>
+        </div>
+        <noscript><style>.result-panel[hidden]{display:block!important;margin-top:2rem}</style></noscript>
       </div>
     </section>
 
-    <hr>
-
-    <section>
-      <h2>Method</h2>
-      <figure style="text-align: center;">
-        <img src="assets/framework.png" alt="Framework overview of InCoM" style="max-width: 100%; border-radius: 8px;">
-      </figure>
-    </section>
-
-    <hr>
-
-    <section>
-      <h2>ManiSkill-HAB Simulation Experiments</h2>
-      <h3>InCoM Task Execution Showcase</h3>
-      <div class="video-hero">
-        <video controls muted loop playsinline src="assets/sim/InCoM/continued_video.mp4"></video>
-      </div>
-
-      <h3>Baseline Comparison</h3>
-      <div class="table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th>Task</th>
-              <th>ACT</th>
-              <th>DSPv2</th>
-              <th>InCoM</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Pick Box from Counter</td>
-              <td><video controls muted loop playsinline src="assets/sim/ACT/pick_box_from_counter.mp4"></video></td>
-              <td><video controls muted loop playsinline src="assets/sim/DSPv2/pick_box_from_counter.mp4"></video></td>
-              <td><video controls muted loop playsinline src="assets/sim/InCoM/pick_box_from_counter.mp4"></video></td>
-            </tr>
-            <tr>
-              <td>Place Can on Counter</td>
-              <td><video controls muted loop playsinline src="assets/sim/ACT/place_can_on_counter.mp4"></video></td>
-              <td><video controls muted loop playsinline src="assets/sim/DSPv2/place_can_on_counter.mp4"></video></td>
-              <td><video controls muted loop playsinline src="assets/sim/InCoM/place_can_on_counter.mp4"></video></td>
-            </tr>
-            <tr>
-              <td>Pick Box from Sofa</td>
-              <td><video controls muted loop playsinline src="assets/sim/ACT/pick_box_from_sofa.mp4"></video></td>
-              <td><video controls muted loop playsinline src="assets/sim/DSPv2/pick_box_from_sofa.mp4"></video></td>
-              <td><video controls muted loop playsinline src="assets/sim/InCoM/pick_box_from_sofa.mp4"></video></td>
-            </tr>
-            <tr>
-              <td>Place Can on Sofa</td>
-              <td><video controls muted loop playsinline src="assets/sim/ACT/place_can_on_sofa.mp4"></video></td>
-              <td><video controls muted loop playsinline src="assets/sim/DSPv2/place_can_on_sofa.mp4"></video></td>
-              <td><video controls muted loop playsinline src="assets/sim/InCoM/place_can_on_sofa.mp4"></video></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <hr>
-
-    <section>
-      <h2>Real-World Experiments</h2>
-      <div class="table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th>Task</th>
-              <th>ACT</th>
-              <th>Pi0.5</th>
-              <th>InCoM</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Throw Rubbish</td>
-              <td><video controls muted loop playsinline src="assets/real/ACT/throw_rubbish.mp4"></video></td>
-              <td><video controls muted loop playsinline src="assets/real/Pi0.5/throw_rubbish.mp4"></video></td>
-              <td><video controls muted loop playsinline src="assets/real/InCoM/throw_rubbish.mp4"></video></td>
-            </tr>
-            <tr>
-              <td>Close Drawer</td>
-              <td><video controls muted loop playsinline src="assets/real/ACT/close_drawer.mp4"></video></td>
-              <td><video controls muted loop playsinline src="assets/real/Pi0.5/close_drawer.mp4"></video></td>
-              <td><video controls muted loop playsinline src="assets/real/InCoM/close_drawer.mp4"></video></td>
-            </tr>
-            <tr>
-              <td>Pick Banana</td>
-              <td><video controls muted loop playsinline src="assets/real/ACT/pick_banana.mp4"></video></td>
-              <td><video controls muted loop playsinline src="assets/real/Pi0.5/pick_banana.mp4"></video></td>
-              <td><video controls muted loop playsinline src="assets/real/InCoM/pick_banana.mp4"></video></td>
-            </tr>
-            <tr>
-              <td>Move Block</td>
-              <td><video controls muted loop playsinline src="assets/real/ACT/move_block.mp4"></video></td>
-              <td><video controls muted loop playsinline src="assets/real/Pi0.5/move_block.mp4"></video></td>
-              <td><video controls muted loop playsinline src="assets/real/InCoM/move_block.mp4"></video></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-    <hr>
-
-    <section id="citation" aria-labelledby="citation-title">
-      <div class="citation-heading">
-        <h2 id="citation-title">Citation</h2>
-        <button class="copy-citation" type="button" id="copy-citation" aria-label="Copy BibTeX citation" hidden>Copy BibTeX</button>
-      </div>
-      <pre class="citation-code"><code id="bibtex">@misc{liu2026incomintentdrivenperceptionstructured,
+    <section class="section container citation-section" id="citation">
+      <div class="section-heading"><p class="eyebrow">05 / BUILD ON THIS WORK</p><h2>Citation</h2><p class="section-lead">If you find InCoM useful in your research, please consider citing our work.</p><a href="https://arxiv.org/abs/2602.23024" class="inline-link" target="_blank" rel="noopener noreferrer">arXiv:2602.23024 <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-external"></use></svg></a></div>
+      <div class="citation-box"><div class="citation-toolbar"><span>BIBTEX</span><button id="copy-citation" class="text-control"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-copy"></use></svg> <span>Copy citation</span></button></div><pre><code id="bibtex">@misc{liu2026incomintentdrivenperceptionstructured,
   title={InCoM: Intent-Driven Perception and Structured Coordination for Mobile Manipulation},
   author={Jiahao Liu and Cui Wenbo and Zhongpu Xia and Yongliang Wang and Haoran Li and Dongbin Zhao},
   year={2026},
@@ -250,30 +201,10 @@
   archivePrefix={arXiv},
   primaryClass={cs.RO},
   url={https://arxiv.org/abs/2602.23024},
-}</code></pre>
-      <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+}</code></pre><p id="copy-status" class="copy-status" role="status" aria-live="polite"></p></div>
     </section>
   </main>
-  <script>
-    const copyButton = document.getElementById('copy-citation');
-    const copyStatus = document.getElementById('copy-status');
-    copyButton.hidden = false;
-    copyButton.addEventListener('click', async () => {
-      try {
-        if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error('Clipboard unavailable');
-        await navigator.clipboard.writeText(document.getElementById('bibtex').textContent);
-        copyStatus.textContent = 'BibTeX copied.';
-      } catch {
-        const range = document.createRange();
-        range.selectNodeContents(document.getElementById('bibtex'));
-        const selection = window.getSelection();
-        if (selection) {
-          selection.removeAllRanges();
-          selection.addRange(range);
-        }
-        copyStatus.textContent = 'Please copy the selected BibTeX manually.';
-      }
-    });
-  </script>
+  <footer class="site-footer container"><a class="brand" href="#top">InCoM<span class="wordmark-period">.</span></a><p>Intent-Driven Perception and Structured Coordination<br class="mobile-break"> for Mobile Manipulation</p><a href="#top" class="inline-link">Back to top <span aria-hidden="true">↑</span></a></footer>
+  <dialog id="figure-dialog" aria-label="Expanded InCoM architecture"><button class="dialog-close" aria-label="Close expanded figure"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#icon-close"></use></svg></button><img src="https://liujiahao2077.github.io/InCoM.github.io/assets/framework.png" alt="Expanded architecture diagram of InCoM"></dialog>
 </body>
 </html>
