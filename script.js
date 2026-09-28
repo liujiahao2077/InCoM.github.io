@@ -101,7 +101,7 @@ function selectTask(task, label) {
   comparisonVideos.forEach((video, index) => {
     video.pause();
     video.closest('figure').querySelector('.media-error')?.remove();
-    video.src = MEDIA_ROOT + environment + '/' + methods[index] + '/' + task + '.mp4#t=0.1';
+    video.src = MEDIA_ROOT + environment + '/' + methods[index] + '/' + task + '.mp4?v=faststart-20260928#t=0.1';
     video.setAttribute('aria-label', (index === 1 ? config.label : methods[index]) + ': ' + label);
     video.load();
   });
